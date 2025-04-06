@@ -1,8 +1,7 @@
-import React from "react";
 import { AppContainer, Title } from "./styles";
 import { Game } from "./components/Game";
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <AppContainer>
       <Title>Snake Game</Title>
