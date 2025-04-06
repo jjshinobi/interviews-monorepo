@@ -1,5 +1,5 @@
-import { GameState } from "../../../domain/entities/game";
 import { StyledBoard, Cell } from "./styles";
+import { GameState } from "../../../../core/domain/entities/game.ts";
 
 export const Board = ({ gameState }: { gameState: GameState }) => {
   const { snake, food, grid } = gameState;

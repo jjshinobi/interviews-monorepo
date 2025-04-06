@@ -1,7 +1,7 @@
-import { updateGame } from "../../../src/application/useCases/updateGame";
-import { startGame } from "../../../src/application/useCases/startGame";
-import { createGame } from "../../../src/application/useCases/createGame";
-import { GameState } from "../../../src/domain/entities/game.ts";
+import { createGame } from "../../../src/core/useCases/createGame.ts";
+import { startGame } from "../../../src/core/useCases/startGame.ts";
+import { updateGame } from "../../../src/core/useCases/updateGame.ts";
+import { GameState } from "../../../src/core/domain/entities/game.ts";
 
 describe("updateGame", () => {
   it("should move the snake in the current direction", () => {

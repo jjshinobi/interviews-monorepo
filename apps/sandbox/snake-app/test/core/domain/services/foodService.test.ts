@@ -2,12 +2,12 @@ import {
   createFood,
   generateFood,
   isEatingFood,
-} from "../../../src/domain/services/foodService";
+} from "../../../../src/core/domain/services/foodService.ts";
 import {
   createSnake,
   createSnakeWithSegments,
-} from "../../../src/domain/services/snakeService";
-import { createGrid } from "../../../src/domain/services/gridService";
+} from "../../../../src/core/domain/services/snakeService.ts";
+import { createGrid } from "../../../../src/core/domain/services/gridService.ts";
 
 describe("Food Service", () => {
   describe("createFood", () => {

@@ -1,14 +1,14 @@
 import {
+  createSnake,
+  createSnakeWithSegments,
+} from "../../../../src/core/domain/services/snakeService.ts";
+import {
   isCollidingWithSelf,
   isCollidingWithSnake,
   isCollidingWithWall,
   isGameOver,
-} from "../../../src/domain/services/collisionService";
-import {
-  createSnake,
-  createSnakeWithSegments,
-} from "../../../src/domain/services/snakeService";
-import { createGrid } from "../../../src/domain/services/gridService";
+} from "../../../../src/core/domain/services/collisionService.ts";
+import { createGrid } from "../../../../src/core/domain/services/gridService.ts";
 
 describe("Collision Service", () => {
   describe("isCollidingWithSelf", () => {

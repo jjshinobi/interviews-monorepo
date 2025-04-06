@@ -1,5 +1,5 @@
 import { createGame } from "./createGame";
-import { GameState } from "../../../src/domain/entities/game.ts";
+import { GameState } from "../domain/entities/game.ts";
 
 export const resetGame = ({ state }: { state: GameState }): GameState => {
   return createGame({

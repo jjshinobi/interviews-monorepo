@@ -1,7 +1,7 @@
 import {
   createGrid,
   isOutOfBounds,
-} from "../../../src/domain/services/gridService";
+} from "../../../../src/core/domain/services/gridService.ts";
 
 describe("Grid Service", () => {
   describe("createGrid", () => {

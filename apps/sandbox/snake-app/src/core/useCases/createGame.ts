@@ -1,9 +1,9 @@
-import { GameState } from "../../../src/domain/entities/game";
-import { createGrid } from "../../../src/domain/services/gridService.ts";
-import { createSnake } from "../../../src/domain/services/snakeService.ts";
-import { generateFood } from "../../../src/domain/services/foodService.ts";
-import { generateRandomPosition } from "../../../src/domain/services/positionService.ts";
-import { Direction, Position } from "../../domain/entities/position.ts";
+import { generateRandomPosition } from "../domain/services/positionService.ts";
+import { Direction, Position } from "../domain/entities/position.ts";
+import { GameState } from "../domain/entities/game.ts";
+import { createGrid } from "../domain/services/gridService.ts";
+import { createSnake } from "../domain/services/snakeService.ts";
+import { generateFood } from "../domain/services/foodService.ts";
 
 export const createGame = ({
   width = 20,

@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
-import { GameState } from "../../domain/entities/game";
-import { Direction } from "../../domain/entities/position";
-import { createGame } from "../../application/useCases/createGame";
-import { startGame } from "../../application/useCases/startGame";
-import { pauseGame } from "../../application/useCases/pauseGame";
-import { updateGame } from "../../application/useCases/updateGame";
-import { resetGame } from "../../application/useCases/resetGame";
+import { GameState } from "../../../core/domain/entities/game";
+import { Direction } from "../../../core/domain/entities/position";
+import { createGame } from "../../../core/useCases/createGame";
+import { startGame } from "../../../core/useCases/startGame";
+import { pauseGame } from "../../../core/useCases/pauseGame";
+import { updateGame } from "../../../core/useCases/updateGame";
+import { resetGame } from "../../../core/useCases/resetGame";
 
 export const useSnakeGame = (width = 20, height = 20, speed = 150) => {
   const [gameState, setGameState] = useState<GameState>(

@@ -1,7 +1,7 @@
-import { pauseGame } from "../../../src/application/useCases/pauseGame";
-import { startGame } from "../../../src/application/useCases/startGame";
-import { createGame } from "../../../src/application/useCases/createGame";
-import { GameState } from "../../../src/domain/entities/game.ts";
+import { createGame } from "../../../src/core/useCases/createGame.ts";
+import { startGame } from "../../../src/core/useCases/startGame.ts";
+import { pauseGame } from "../../../src/core/useCases/pauseGame.ts";
+import { GameState } from "../../../src/core/domain/entities/game.ts";
 
 describe("pauseGame", () => {
   it("should change status from STARTED to PAUSED", () => {
@@ -15,7 +15,7 @@ describe("pauseGame", () => {
 
   it("should not change status if already PAUSED", () => {
     const initialState = createGame({});
-    expect(initialState.status).toBe("PAUSED");
+    initialState.status = "PAUSED";
 
     const stillPausedState = pauseGame({ state: initialState });
     expect(stillPausedState.status).toBe("PAUSED");

@@ -1,11 +1,11 @@
-import { startGame } from "../../../src/application/useCases/startGame";
-import { createGame } from "../../../src/application/useCases/createGame";
-import { GameState } from "../../../src/domain/entities/game.ts";
+import { createGame } from "../../../src/core/useCases/createGame.ts";
+import { startGame } from "../../../src/core/useCases/startGame.ts";
+import { GameState } from "../../../src/core/domain/entities/game.ts";
 
 describe("startGame", () => {
-  it("should change status from PAUSED to STARTED", () => {
+  it("should change status from NEW to STARTED", () => {
     const initialState = createGame({});
-    expect(initialState.status).toBe("PAUSED");
+    expect(initialState.status).toBe("NEW");
 
     const startedState = startGame({ state: initialState });
     expect(startedState.status).toBe("STARTED");

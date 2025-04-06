@@ -1,4 +1,4 @@
-import { generateRandomPosition } from "../../../src/domain/services/positionService.ts";
+import { generateRandomPosition } from "../../../../src/core/domain/services/positionService.ts";
 
 describe("generateRandomPosition", () => {
   it("should generate position within the specified dimensions", () => {

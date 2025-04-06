@@ -1,4 +1,4 @@
-import { createGame } from "../../../src/application/useCases/createGame";
+import { createGame } from "../../../src/core/useCases/createGame";
 
 describe("createGame", () => {
   it("should create a game with default grid size", () => {
@@ -13,7 +13,7 @@ describe("createGame", () => {
     expect(state.snake.segments[0].y).toBe(10);
     expect(state.food).toBeDefined();
     expect(state.score).toBe(0);
-    expect(state.status).toBe("PAUSED");
+    expect(state.status).toBe("NEW");
   });
 
   it("should create a game with specified grid size", () => {

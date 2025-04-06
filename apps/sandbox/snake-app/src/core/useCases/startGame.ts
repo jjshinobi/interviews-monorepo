@@ -1,4 +1,4 @@
-import { GameState } from "../../../src/domain/entities/game.ts";
+import { GameState } from "../domain/entities/game.ts";
 
 export const startGame = ({ state }: { state: GameState }): GameState => {
   if (state.status !== "FINISHED") {

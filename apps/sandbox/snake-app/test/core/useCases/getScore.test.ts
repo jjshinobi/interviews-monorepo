@@ -1,5 +1,5 @@
-import { getScore } from "../../../src/application/useCases/getScore";
-import { createGame } from "../../../src/application/useCases/createGame";
+import { createGame } from "../../../src/core/useCases/createGame.ts";
+import { getScore } from "../../../src/core/useCases/getScore.ts";
 
 describe("getScore", () => {
   it("should return initial score of 0", () => {

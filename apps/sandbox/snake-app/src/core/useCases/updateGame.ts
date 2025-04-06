@@ -1,17 +1,11 @@
-import { GameState } from "../../../src/domain/entities/game.ts";
-import { Direction } from "../../../src/domain/entities/position.ts";
+import { GameState } from "../domain/entities/game.ts";
+import { Direction } from "../domain/entities/position.ts";
+import { growSnake, moveSnake } from "../domain/services/snakeService.ts";
 import {
   isCollidingWithSelf,
   isCollidingWithWall,
-} from "../../../src/domain/services/collisionService.ts";
-import {
-  growSnake,
-  moveSnake,
-} from "../../../src/domain/services/snakeService.ts";
-import {
-  generateFood,
-  isEatingFood,
-} from "../../../src/domain/services/foodService.ts";
+} from "../domain/services/collisionService.ts";
+import { generateFood, isEatingFood } from "../domain/services/foodService.ts";
 
 export const updateGame = ({
   state,

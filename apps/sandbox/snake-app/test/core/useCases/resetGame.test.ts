@@ -1,8 +1,8 @@
-import { resetGame } from "../../../src/application/useCases/resetGame";
-import { updateGame } from "../../../src/application/useCases/updateGame";
-import { startGame } from "../../../src/application/useCases/startGame";
-import { createGame } from "../../../src/application/useCases/createGame";
-import { GameState } from "../../../src/domain/entities/game.ts";
+import { createGame } from "../../../src/core/useCases/createGame.ts";
+import { startGame } from "../../../src/core/useCases/startGame.ts";
+import { updateGame } from "../../../src/core/useCases/updateGame.ts";
+import { resetGame } from "../../../src/core/useCases/resetGame.ts";
+import { GameState } from "../../../src/core/domain/entities/game.ts";
 
 describe("resetGame", () => {
   it("should reset the game to initial state", () => {
@@ -16,7 +16,7 @@ describe("resetGame", () => {
     const resetState = resetGame({ state });
 
     expect(resetState.score).toBe(0);
-    expect(resetState.status).toBe("PAUSED");
+    expect(resetState.status).toBe("NEW");
     expect(resetState.snake.segments.length).toBe(1);
 
     expect(resetState.grid.width).toBe(state.grid.width);
@@ -32,7 +32,7 @@ describe("resetGame", () => {
 
     const resetState = resetGame({ state: finishedState });
 
-    expect(resetState.status).toBe("PAUSED");
+    expect(resetState.status).toBe("NEW");
   });
 
   it("should maintain custom grid dimensions", () => {

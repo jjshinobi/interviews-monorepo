@@ -1,11 +1,11 @@
 import {
+  calculateNewHead,
   createSnake,
   getHead,
-  isValidDirectionChange,
-  calculateNewHead,
-  moveSnake,
   growSnake,
-} from "../../../src/domain/services/snakeService";
+  isValidDirectionChange,
+  moveSnake,
+} from "../../../../src/core/domain/services/snakeService.ts";
 
 describe("Snake Service", () => {
   describe("createSnake", () => {
