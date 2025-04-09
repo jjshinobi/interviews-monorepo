@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/shortest-distance-to-a-character
+
 /**
  * Returns an array of integers representing the shortest distance
  * from each character in the string 's' to the character 'c'.

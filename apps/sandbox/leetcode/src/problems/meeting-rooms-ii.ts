@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/meeting-rooms-ii
+
 export function minMeetingRooms(intervals: number[][]): number {
   if (intervals.length === 0) return 0;
 

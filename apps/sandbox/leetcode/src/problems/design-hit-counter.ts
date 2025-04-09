@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/design-hit-counter
+
 type HitCounter = {
   hit: (timestamp: number) => void;
   getHits: (timestamp: number) => number;

@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/dice-roll-simulation
+
 export function dieSimulator(n: number, rollMax: number[]): number {
   const MOD = 1_000_000_007;
 

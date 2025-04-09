@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/peeking-iterator
+
 export type NormalIterator<T> = {
   next: () => { value: T; done: boolean };
   hasNext: () => boolean;

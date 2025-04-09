@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/greatest-common-divisor-of-strings
+
 /**
  * Find the largest string X such that X divides both str1 and str2.
  * A string X divides another string if X can be concatenated multiple times to form the original string.
