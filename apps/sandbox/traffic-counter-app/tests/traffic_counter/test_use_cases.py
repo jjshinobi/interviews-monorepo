@@ -1,7 +1,12 @@
 from datetime import datetime
 
 from traffic_counter.entities import TrafficCount
-from traffic_counter.use_cases import total_count, aggregate_by_day, top_x_traffic_count
+from traffic_counter.use_cases import (
+    total_count,
+    aggregate_by_day,
+    top_x_traffic_count,
+    least_contiguous_x_traffic_count,
+)
 
 
 def test_total_count():
@@ -75,3 +80,41 @@ def test_x_traffic_count():
 
     assert result[1]["start_timestamp"].isoformat() == "2016-12-01T06:00:00"
     assert result[1]["traffic_count"] == 10
+
+
+def test_least_contiguous_x_traffic_count():
+    data: list[TrafficCount] = [
+        {
+            "start_timestamp": datetime.fromisoformat("2016-12-01T05:00:00"),
+            "traffic_count": 6,
+        },
+        {
+            "start_timestamp": datetime.fromisoformat("2016-12-01T05:30:00"),
+            "traffic_count": 10,
+        },
+        {
+            "start_timestamp": datetime.fromisoformat("2016-12-01T06:00:00"),
+            "traffic_count": 5,
+        },
+        {
+            "start_timestamp": datetime.fromisoformat("2016-12-01T06:30:00"),
+            "traffic_count": 2,
+        },
+        {
+            "start_timestamp": datetime.fromisoformat("2016-12-01T07:00:00"),
+            "traffic_count": 15,
+        },
+    ]
+
+    result = least_contiguous_x_traffic_count(data, 3)
+
+    assert len(result) == 3
+
+    assert result[0]["start_timestamp"].isoformat() == "2016-12-01T05:30:00"
+    assert result[0]["traffic_count"] == 10
+
+    assert result[1]["start_timestamp"].isoformat() == "2016-12-01T06:00:00"
+    assert result[1]["traffic_count"] == 5
+
+    assert result[2]["start_timestamp"].isoformat() == "2016-12-01T06:30:00"
+    assert result[2]["traffic_count"] == 2

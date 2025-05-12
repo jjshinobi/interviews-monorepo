@@ -1,5 +1,10 @@
 from traffic_counter.traffic_data_parser import parse_traffic_data
-from traffic_counter.use_cases import total_count, aggregate_by_day, top_x_traffic_count
+from traffic_counter.use_cases import (
+    total_count,
+    aggregate_by_day,
+    top_x_traffic_count,
+    least_contiguous_x_traffic_count,
+)
 
 
 def app(file_path: str):
@@ -24,5 +29,13 @@ def app(file_path: str):
         map(
             lambda x: print(f"    {x['start_timestamp']} {x['traffic_count']}"),
             top_x_traffic_count(traffic_data=traffic_data, x=3),
+        )
+    )
+
+    print(f"  The 1.5 hour period with least cars:")
+    list(
+        map(
+            lambda x: print(f"    {x['start_timestamp']} {x['traffic_count']}"),
+            least_contiguous_x_traffic_count(traffic_data=traffic_data, x=3),
         )
     )
