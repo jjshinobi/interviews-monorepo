@@ -48,3 +48,17 @@ def aggregate_by_day(traffic_data: list[TrafficCount]) -> list[TrafficCount]:
             reduce(_reduce_fn, traffic_data, {}).items(),
         )
     )
+
+
+def top_x_traffic_count(traffic_data: list[TrafficCount], x: int) -> list[TrafficCount]:
+    """
+    Get the top x traffic counts from the given traffic data.
+
+    Args:
+        traffic_data (list): A list of TrafficCount objects.
+        x (int): The number of top traffic counts to return.
+
+    Returns:
+        list: A list of the top x TrafficCount objects.
+    """
+    return sorted(traffic_data, key=lambda y: y["traffic_count"], reverse=True)[:x]
