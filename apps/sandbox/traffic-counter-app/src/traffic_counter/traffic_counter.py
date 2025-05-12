@@ -23,6 +23,6 @@ def app(file_path: str):
     list(
         map(
             lambda x: print(f"    {x['start_timestamp']} {x['traffic_count']}"),
-            top_x_traffic_count(traffic_data, x=3),
+            top_x_traffic_count(traffic_data=traffic_data, x=3),
         )
     )
