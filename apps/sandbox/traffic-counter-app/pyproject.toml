@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "traffic-counter"
+version = "1.0.0"
+description = "Traffic counter"
+authors = []
+package-mode = true
+packages = [{ include = "traffic_counter", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "3.12.9"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "8.3.5"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
